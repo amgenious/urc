@@ -1,0 +1,63 @@
+<%- include('./partials/header') %>
+<a href="/formviews" style="text-decoration: none; color: black;padding: 10px;">View Forms</a>
+<div style="text-align: center; margin-top: 50px;">
+    <h1><b>Admin Views</b></h1>
+    <p><i>Display of Executives</i></p>
+</div>    
+<table class="table table-primary table-striped-columns">
+    <thead>
+        <tr>
+            <th>Full Name</th>
+            <th>Level</th>
+            <th>Program</th>
+            <th>Portfolio</th>
+            <th>Image</th>
+            <th>Contact</th>
+            <th>Social Media Handles</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% if (Executive.length > 0){ %> <% Executive.forEach(Executive => { %>
+        <tr class="align-middle">
+            <td><%= Executive.fullname %></td>
+            <td><%= Executive.level %></td>
+            <td><%= Executive.programofstudy %></td>
+            <td><%= Executive.portfolio %></td>
+            <td><img src="<%= Executive.image %>" width="50px" class="img-thumbnail" ></td>
+            <td><%= Executive.contact %></td>
+            <td><%= Executive.linkedin %></td>
+            <td><a href="/deleteexecutive/<%- Executive._id %>" ><i class="bi bi-trash"></i></a></td>
+        </tr>
+        <% }) %> <% } else{ %>
+            <p>There are no Executives to be displayed</p>
+          <% } %>
+    </tbody>
+</table>
+<br>
+<br>
+<p style="text-align: center;"><i>Display of Projects</i></p>
+<table class="table table-primary table-striped-columns">
+    <thead>
+        <tr>
+            <th>Project Name</th>
+            <th>Date of Completion</th>
+            <th>Description</th>
+            <th>Project Image</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% if (Project.length > 0){ %> <% Project.forEach(Project => { %>
+        <tr class="align-middle">
+            <td><%= Project.projectname %></td>
+            <td><%= Project.dateofcompletion %></td>
+            <td><%= Project.description %></td>
+            <td><img src="<%= Project.image %>" width="50px" class="img-thumbnail"></td>
+            <td><a href="/deleteproject/<%- Project._id %>"><i class="bi bi-trash"></i></a></td>
+        </tr>
+        <% }) %> <% } else{ %>
+            <p>There are no Projects to be displayed</p>
+          <% } %>
+    </tbody>
+</table>

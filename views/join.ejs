@@ -1,0 +1,79 @@
+<%- include('./partials/header') %>
+<%- include('./partials/navbar') %>   
+<!--Page title-->
+<div class="page-title-area shadow dark bg-fixed text-center text-light" id="sad">
+  <div id="pro_cover">
+    <div class="container" style="height: 45vh;" id="fold1">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div>
+                <h1 style=" font-size: 80px; "><b>Join Us</b></h1>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+</div>
+<!-- End Page Title -->
+
+<!-- Start Login 
+============================================= -->
+<div class="login-area">
+    <div class="container">
+        <div class="row" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+            <div class="col-md-6 col-md-offset-3" style="height: 65vh;">
+                <form action="/joinus" id="login-form" class="white-popup-block" style="margin-top: 10%;height: 50vh;" method="post">
+                    <div class="login-custom" style="box-shadow:0px 0px 3px 3px rgba(0, 0, 0, 0.212);">
+                        <div style="text-align: center; padding-bottom:20px;padding-top:20px;">
+                        <h4><i class="bi bi-pencil" style="color: rgb(7, 7, 61);"></i>Join Us</h4>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="form-group">
+                                    <input class="form-control" name="name" placeholder="Name" type="name" style="width: 75%; height:60px; border-radius:200px;" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="form-group">
+                                    <input class="form-control" name="email" placeholder="Email" type="email" style="width: 75%; height:60px; border-radius:200px;" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="form-group">
+                                    <input class="form-control" name="program" placeholder="Program" type="text" style="width: 75%; height:60px; border-radius:200px;" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="form-group">
+                                    <input class="form-control" name="level" placeholder="Level" type="text" style="width: 75%; height:60px; border-radius:200px;" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="form-group">
+                                    <input class="form-control" name="contact" placeholder="Contact" type="number" style="width: 75%; height:60px; border-radius:200px;" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="row" style="display: flex; justify-content: center; padding-bottom: 20px;">
+                                <button type="submit" style="background-color: rgb(7, 7, 61); width: 20%;height: 50px; border-radius: 200px;" onclick="clicked()">
+                                    <b style="color: white;">JOIN</b>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>    
+        </div>
+    </div>
+</div>
+<!-- End Login Area -->
+<%- include('./partials/footer') %>

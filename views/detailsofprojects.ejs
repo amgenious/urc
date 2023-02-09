@@ -1,0 +1,99 @@
+<%- include('./partials/header') %>
+<%- include('./partials/navbar') %>  
+          
+<div class="page-title-area shadow dark bg-fixed text-center text-light" id="di">
+  <div id="pro_cover">
+    <div class="container" style="height: 45vh;" id="fold1">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div>
+                <h1 style=" font-size: 80px; "><b>Projects Curiosity</b></h1>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+</div>
+<!-- End Page Title -->
+<!-- BODY -->
+<br>
+<div class="container">
+  <div class="row" style="padding-bottom: 10px;">
+    <div class="col-md-12">
+        <div class="abs">
+          <h1><b>Abstract</b></h1>
+          <p style="font-size: 25px;">A semi-autonomous vehicle which provides a cost-effective water quality assessment by measuring certain essential aquatic conditions remotely. It is able to collect data through various water sensors, process it and inform the user (a fishfarmer or any institution that will require data for research like the EPA) about the condition of the water in order for the user to either take the necessary action or nullify it.</p>
+        </div>
+    </div>
+  </div>
+  <div class="row" style="padding-bottom: 10px;">
+    <div class="col-md-6" >
+      <div class="pro">
+        <h1><b>Problem Statement</b></h1>
+        <p style="font-size: 25px;">About 80% of the world’s untreated waste is emitted back into the environment polluting waterbodies such as rivers and lakes. Of the water that covers 71% of our planet, only 3% of it is freshwater and less than 1% of that 
+          freshwater is made available to our exploding population which by the way, grows at 
+          a rate of 81 million people per year. Without action, the challenges will only increase by 2050, when global demand for freshwater is expected to be one-third greater than it is now. These emissions can lead to the extinction of endangered species, loss of lives as well as the disruption of fish farming activities.</p>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="obj">
+        <h1><b>Aims/Oblective</b></h1>
+        <p><ul style="font-size: 25px;">
+          <li>To provide the fish farmer with a perfect environment for miximum yield.</li>
+          <li>To provide the EPA or any research institution with continuos flow of data.</li>
+          <li>To provide users with a safe and cost-effecive method for water quality assessment and do away with traditional methods that involve manually collecting water samples.</li>
+        </ul></p>
+      </div>
+      <div class="aims" style="font-family: 'Srisakdi', cursive; text-align: center;">
+          <h1>Aims at promoting <br><span style="color: red;">SDGs</span></h1>
+      </div>
+    </div>
+  </div>
+  <div class="row" style="padding-bottom: 10px;">
+    <div class="col-md-6">
+      <div class="app">
+        <h1><b>Approach</b></h1>
+        <p style="font-size: 25px;">Project curiosity comprises of a
+          pHsensor, Turbidity sensor, Temperature sensor, Oxygen sensor, Conductivity sensor connected to a microcontroller which is communicates to a gateway. 
+          The gateway sends all sensor data to a cloud to be stored.
+          A mobile app then fetches the data from the cloud storage to make it meaningful to users. 
+          The system uses a lithium battery to power up the microcontroller and this battery is charged using a solar panel of higher voltage. </p>
+      </div>
+    </div>
+    <div class="col-md-6">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="mth">
+        <h1><b>How it works</b></h1>
+        <p>
+          <ul style="font-size: 25px;">
+            <li>Put on the switch to power the microcontroller. Login to our mobile app to toggle the switch for the sensors on. </li>
+            <li>Once all sensors come online, they start collecting data.  </li>
+            <li>You can find your device location on a map in the mobile application. </li>
+            <li>Tap on your device to view all sensor values. Collection of values can be configured, so a user who would want data to be collected daily or weekly can set it to suit his/her taste. </li>
+            <li>By each sensor value is a text depicting if that particular condition is in a good or bad state.  </li>
+            <li>In addition to that, for a user who wouldn’t be able to tell what it means when the pH level for water is acidic, there are audios recorded in his local dialect by each sensor value that he/she can play to understand exactly what is happening. </li>
+          </ul>
+        </p>
+        <br>
+        <h1><b>Technologies Used</b></h1>
+        <p>
+          <ul style="font-size: 25px;">
+            <ol>Microcontroller(wazidev board-ATmega 328)</ol>
+            <ol>gateway(wazigate)</ol>
+            <ol>water sensors: pH, temperature, conductivity, oxygen, turbidity</ol>
+            <ol>GPS</ol>
+            <ol>solar panel (12V)</ol>
+            <ol>lithium battery (6V)</ol>
+            <ol>jumper wires</ol>
+            <ol>switch</ol>
+          </ul>
+        </p>
+      </div>
+    </div>
+  </div>
+  <br>
+</div>
+<%- include('./partials/footer') %>

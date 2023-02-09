@@ -1,0 +1,66 @@
+<%- include('./partials/header') %>
+<div style="text-align: center; margin-top: 50px;">
+<h1><b>Admin Interactions</b></h1>
+<p><i>How to add executives to the website</i></p>
+</div>
+
+<div style="display: flex; justify-content: center;">
+<form class="adminforms" method="post" action="/addexecutive" enctype="multipart/form-data">
+    <div class="admindivs">
+    <label>Full Name</label>
+    <input type="text" name="fullname" placeholder="Full Name" required>
+    </div>
+    <div class="admindivs">
+        <label>Program Of Study</label>
+        <input type="text" name="programofstudy" placeholder="Program of Study" required> 
+    </div>
+    <div class="admindivs">
+        <label>Level</label>
+        <input type="text" name="level" placeholder="Level" required>
+    </div>
+    <div class="admindivs">
+        <label>Portfolio</label>
+        <input type="text" name="portfolio" placeholder="Portfolio" required>
+    </div>
+    <div class="admindivs">
+        <label>Contact</label>
+        <input type="number" name="contact" placeholder="Contact" required>
+    </div>
+    <div class="admindivs">
+        <label>Linkedin Handle</label>
+        <input type="text" name="linkedin" placeholder="Linkedin" style="margin-bottom: 2px;">
+    </div>
+    <div>
+        <label>Add an image</label>
+        <input type="file" name="image" required>
+    </div>
+    <br>
+    <button type="submit" class="btn btn-primary">Send</button>
+</form>
+</div>
+<br>
+<br>
+
+<p style="text-align: center;"><i>How to add projects to the website</i></p>
+<div style="display: flex; justify-content: center;">
+    <form class="adminforms" method="post" action="/addproject" enctype="multipart/form-data">
+        <div class="admindivs">
+        <label>Project Name</label>
+        <input type="text" name="projectname" placeholder="Project Name" required>
+        </div>
+        <div class="admindivs">
+            <label>Date of Completion</label>
+            <input type="text" name="dateofcompletion" placeholder="Date of Completion" required> 
+        </div>
+        <div class="admindivs">
+            <label>Description</label>
+            <textarea type="text" name="description" placeholder="Description" required></textarea>
+        </div>
+        <div>
+            <label>Add Project Image</label>
+            <input type="file" name="image" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Send</button>
+    </form>
+</div>
+ <br>

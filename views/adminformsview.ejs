@@ -1,0 +1,56 @@
+<%- include('./partials/header') %>
+<a href="/adminviews" style="text-decoration: none; color: black;padding: 10px;">View Executives</a>
+<div style="text-align: center; margin-top: 50px;">
+    <h1><b>Admin Forms Views</b></h1>
+    <p><i>Display of Forms</i></p>
+</div>
+<table class="table table-primary table-striped-columns">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Program</th>
+            <th>Level</th>
+            <th>Contact</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% if (Join.length > 0){ %> <% Join.forEach(Join => { %>
+        <tr>
+            <td><%= Join.name %></td>
+            <td><%= Join.email %></td>
+            <td><%= Join.program %></td>
+            <td><%= Join.level %></td>
+            <td><%= Join.contact %></td>
+            <td><a href="/deletejoin/<%- Join._id %>"><i class="bi bi-trash"></i></a></td>
+        </tr>
+        <% }) %> <% } else{ %>
+            <p>No one is joining</p>
+          <% } %>
+    </tbody>
+</table>
+<br>
+<br>
+<p style="text-align: center;"><i>Display of People Ideas</i></p>
+<table class="table table-primary table-striped-columns">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Contact</th>
+            <th>Comments</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% if (Idea.length > 0){ %> <% Idea.forEach(Idea => { %>
+        <tr>
+            <td><%= Idea.name %></td>
+            <td><%= Idea.email %></td>
+            <td><%= Idea.contact %></td>
+            <td><%= Idea.comments %></td>
+            <td><a href="/deleteidea/<%- Idea._id %>demo"><i class="bi bi-trash"></i></a></td>
+        </tr>
+    </tbody>
+</table>
