@@ -52,5 +52,8 @@
             <td><%= Idea.comments %></td>
             <td><a href="/deleteidea/<%- Idea._id %>demo"><i class="bi bi-trash"></i></a></td>
         </tr>
+        <% }) %> <% } else{ %>
+            <p>No Ideas is joining</p>
+          <% } %>
     </tbody>
 </table>

@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require("express")
 const morgan = require("morgan")
 const mongoose = require("mongoose")
@@ -17,14 +18,14 @@ app.use(bodyParser.json())
 
 // database connection
 mongoose.set('strictQuery', true)
-const dbURL = "mongodb+srv://amgenious:0123456789@firstnode.tegei7z.mongodb.net/urcbackend?retryWrites=true&w=majority";
-mongoose.connect(dbURL)
-.then(()=>{
-    console.log('database connected')
-})
-.catch((err) => {
-    console.log(err)
-})
+mongoose.connect(process.env.MONGO_URI, {useNewUrlParser: true, useUnifiedTopology: true})
+    .then(() => {
+        console.log('connected to database')
+    })
+    .catch((err) => {
+        console.log(err)
+    })
+  
 
 
 
