@@ -24,7 +24,7 @@
             <td><%= Executive.level %></td>
             <td><%= Executive.programofstudy %></td>
             <td><%= Executive.portfolio %></td>
-            <td><img src="<%= Executive.image %>" width="50px" class="img-thumbnail" ></td>
+            <td><img src="<%= Executive.imageName %>" width="50px" class="img-thumbnail" ></td>
             <td><%= Executive.contact %></td>
             <td><%= Executive.linkedin %></td>
             <td><a href="/deleteexecutive/<%- Executive._id %>" ><i class="bi bi-trash"></i></a></td>
@@ -53,6 +53,7 @@
             <td><%= Project.projectname %></td>
             <td><%= Project.dateofcompletion %></td>
             <td><%= Project.description %></td>
+            
             <td><img src="<%= Project.image %>" width="50px" class="img-thumbnail"></td>
             <td><a href="/deleteproject/<%- Project._id %>"><i class="bi bi-trash"></i></a></td>
         </tr>
