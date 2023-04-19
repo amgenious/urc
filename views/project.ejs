@@ -19,10 +19,12 @@
 <br>
 <div class="container">
     <div class="row">
-        <div class="col-md-12" id="daa">
+        <div class="col-md-12" id="daa" style="flex-wrap: wrap;">
             <% if (Project.length > 0){ %> <% Project.forEach(Project => { %>
             <div class="card" style="width: 23rem; margin-bottom: 15px;">
-                <img class="card-img-top" src="<%= Project.image %>"  alt="Card image cap">
+                <div style="width: 23rem;  display: flex; align-items: center;">
+                    <img class="card-img-top" src="<%= Project.image %>"  alt="Card image cap" style="object-fit: contain;">
+                </div>
                 <div class="card-body">
                     <h1><b><%= Project.projectname %></b></h1>
                 <p class="card-text"><%= Project.description %></p>

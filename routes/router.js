@@ -190,51 +190,15 @@ route.get('/deleteexecutive/:id', async (req,res) => {
 
 //to insert a project
 route.post("/addproject", upload.single('image'), async (req,res) => {
-    let imagePath = req.file.path;
-   
-    // AWS SDK Configuration
-AWS.config.update({
-    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-    region: process.env.AWS_S3_REGION_NAME,
-    signatureVersion : 'v4'  //API version
-});
-// Creating an S3 instance
-const s3 = new AWS.S3({signatureVersion: 'v4'});
-// Reading the file from local path and uploading to S3 Bucket
-fs.readFile(imagePath, (err, fileBody) => {
-    if(err) {
-       console.log("Error", err);
-    } else {
-        let params =  {
-            Bucket: process.env.AWS_STORAGE_BUCKET_NAME,
-            Key: req.file.filename,
-            Body: fileBody,  
-        };
-        s3.upload(params, async(err, result) => {
-            if(err) {
-               return {"status": 500, "data": err};
-            } else {
-                let imageExt = req.file.path.split('/');
-                imageExt = imageExt[imageExt.length -1].split(".")[1]
-                // console.log(imageExt)
+ 
                 const project = new Project({
                     projectname:req.body.projectname,
                     dateofcompletion:req.body.dateofcompletion,
                     description:req.body.description,
-                    imageName:req.file.filename,
-                    image:result.Location,
+                    image:req.file.filename,
                 });
                 await Project.insertMany([project])
-                
-            }
-        })
-    }
-});
-
-
-    
-    res.redirect('/adminviews')
+                res.redirect('/adminviews')
 })
 
 // to delete an project
