@@ -13,8 +13,10 @@ app.set('view engine', 'ejs')
 app.use(morgan('dev'))
 app.use(express.static('public'))
 app.use(express.static('uploads'))
+
+app.use(express.urlencoded({extended: true}));
 app.use (bodyParser.urlencoded({ extended:false}))
-app.use(bodyParser.json())
+// app.use(bodyParser.json())
 
 // database connection
 mongoose.set('strictQuery', true)
@@ -30,6 +32,7 @@ mongoose.connect(process.env.MONGO_URI, {useNewUrlParser: true, useUnifiedTopolo
 
 
 app.use("/", require('./routes/router'))
+
 
 app.listen(4001, () =>{
     console.log("Started on port http://localhost:4001")

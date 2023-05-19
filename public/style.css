@@ -286,7 +286,7 @@
     }
 }
 .executive{
-    border: 2px solid red;
+    
     width: max-content; 
     display: flex;
     flex-direction: column;

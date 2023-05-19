@@ -1,5 +1,6 @@
 <%- include('./partials/header') %>
 <a href="/formviews" style="text-decoration: none; color: black;padding: 10px;">View Forms</a>
+<a href="/adminadd" style="text-decoration: none; color: black;padding: 10px;">Add Exe or Project</a>
 <div style="text-align: center; margin-top: 50px;">
     <h1><b>Admin Views</b></h1>
     <p><i>Display of Executives</i></p>
@@ -24,7 +25,7 @@
             <td><%= Executive.level %></td>
             <td><%= Executive.programofstudy %></td>
             <td><%= Executive.portfolio %></td>
-            <td><img src="<%= Executive.imageName %>" width="50px" class="img-thumbnail" ></td>
+            <td><img src="https://drive.google.com/uc?id=<%= Executive.exe_image %>" width="50px" class="img-thumbnail" ></td>
             <td><%= Executive.contact %></td>
             <td><%= Executive.linkedin %></td>
             <td><a href="/deleteexecutive/<%- Executive._id %>" ><i class="bi bi-trash"></i></a></td>
@@ -54,7 +55,7 @@
             <td><%= Project.dateofcompletion %></td>
             <td><%= Project.description %></td>
             
-            <td><img src="<%= Project.image %>" width="50px" class="img-thumbnail"></td>
+            <td><img src="https://drive.google.com/uc?id=<%= Project.proimage %>" width="50px" class="img-thumbnail"></td>
             <td><a href="/deleteproject/<%- Project._id %>"><i class="bi bi-trash"></i></a></td>
         </tr>
         <% }) %> <% } else{ %>

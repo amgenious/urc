@@ -23,13 +23,15 @@
               <h3><b>Leadership</b></h3>
             </div>
             <div class="row">
-              <div class="col-sm" id="lds">
+              <div class="col-sm" id="lds" style="flex-wrap: wrap;">
                 <% if (Executive.length > 0){ %> <% Executive.forEach(Executive => { %>
                   <div class="col-sm" id="lds">
                     <div class="executive">
                     <div class="name">
-                      <img src="<%= Executive.image %>">
-                       <p><b><%= Executive.fullname %></b></p>
+                      <div style="object-fit: fill;">
+                        <img src="https://drive.google.com/uc?id=<%= Executive.exe_image %>" style="width:300px; height: 400px;">  
+                      </div>
+                        <p><b><%= Executive.fullname %></b></p>
                         <p><%= Executive.portfolio %></p>
                     </div>
                     </div>

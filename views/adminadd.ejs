@@ -3,9 +3,13 @@
 <h1><b>Admin Interactions</b></h1>
 <p><i>How to add executives to the website</i></p>
 </div>
-
+<div style="text-align: center;">
+    <h4>Please click on this link below to add the executive images to get the id</h4>
+    <p>Click <a href="https://imagesupload.vercel.app" target="_blank">Here</a></p>
+</div>
+<br>
 <div style="display: flex; justify-content: center;">
-<form class="adminforms" method="post" action="/addexecutive" enctype="multipart/form-data">
+<form class="adminforms" method="post" action="/addexecutive"  style="width: 50%;">
     <div class="admindivs">
     <label>Full Name</label>
     <input type="text" name="fullname" placeholder="Full Name" required>
@@ -30,9 +34,9 @@
         <label>Linkedin Handle</label>
         <input type="text" name="linkedin" placeholder="Linkedin" style="margin-bottom: 2px;">
     </div>
-    <div>
-        <label>Add an image</label>
-        <input type="file" name="image" required>
+    <div class="admindivs">
+        <label>Add Executive Image url</label>
+        <input type="text" name="exe_image" placeholder="paste the copied id" required>
     </div>
     <br>
     <button type="submit" class="btn btn-primary">Send</button>
@@ -42,23 +46,28 @@
 <br>
 
 <p style="text-align: center;"><i>How to add projects to the website</i></p>
+<div style="text-align: center;">
+    <h4>Please click on this link below to add the executive images to get the id</h4>
+    <p>Click <a href="https://imagesupload.vercel.app" target="_blank">Here</a></p>
+</div>
+<br>
 <div style="display: flex; justify-content: center;">
-    <form class="adminforms" method="post" action="/addproject" enctype="multipart/form-data">
+    <form class="adminforms" method="post" action="/addproject" style="width: 50%;">
         <div class="admindivs">
         <label>Project Name</label>
-        <input type="text" name="projectname" placeholder="Project Name" required>
+        <input type="text" name="projectname" id="projectname" placeholder="Project Name" required>
         </div>
         <div class="admindivs">
             <label>Date of Completion</label>
-            <input type="text" name="dateofcompletion" placeholder="Date of Completion" required> 
+            <input type="text" name="dateofcompletion" id="dateofcompletion" placeholder="Date of Completion" required> 
         </div>
         <div class="admindivs">
             <label>Description</label>
-            <textarea type="text" name="description" placeholder="Description" required></textarea>
+            <textarea type="text" cols="40" rows="9" name="description" id="description" placeholder="Description" required></textarea>
         </div>
-        <div>
-            <label>Add Project Image</label>
-            <input type="file" name="image" required>
+        <div class="admindivs">
+            <label>Add Project Image Url</label>
+            <input type="text" name="proimage" id="proimage" placeholder="https://s3.amazonaws.com/your-bucket-name/image-name.jpg" required>
         </div>
         <button type="submit" class="btn btn-primary">Send</button>
     </form>

@@ -1,20 +1,18 @@
 const express = require("express")
-const multer = require("multer")
 const Executive = require("../models/executives")
 const Project = require("../models/project")
 const Idea = require("../models/ideas")
 const Join = require("../models/join")
 const route = express.Router()
-const fs = require("fs")
-const path = require("path")
 require('dotenv').config()
-const AWS = require('aws-sdk')
+
 
 
 
 
 route.get("/", (req,res) => {
     Executive.find()
+    .sort({ createdAt: -1 })
     .then(data => {
         res.render('index', {title:'URC', Executive:data})
     })
@@ -26,6 +24,7 @@ route.get("/gallery", (req,res) => {
 
 route.get("/about", (req,res) => {
     Executive.find()
+    .sort({ createdAt: -1 })
     .then(data => {
     res.render('about', {title:'URC - About', Executive:data})
     })
@@ -102,7 +101,6 @@ route.post("/joinus", async (req,res) => {
     })
 
     await Join.insertMany([data])
-
     res.send("Your join request has been sent")
 })
 
@@ -145,20 +143,10 @@ route.get("/formviews", (req,res) => {
     })
 })
 
-//functon to handle image upload
-var storage = multer.diskStorage({
-    destination: function(req, file, cb){
-      cb(null, "./uploads");
-    },
-    filename:function(req, file, cb){
-      cb(null,file.fieldname + "_" + Date.now()+ "_" + file.originalname);
-    },
-  });
-  
-  var upload = multer({ storage: storage });
+
 
 //the insert of image with the executives part
-route.post("/addexecutive", upload.single('image'), async (req,res) => {
+route.post("/addexecutive", async (req,res) => {
     
     const executive = new Executive({
         fullname:req.body.fullname,
@@ -167,10 +155,20 @@ route.post("/addexecutive", upload.single('image'), async (req,res) => {
         portfolio:req.body.portfolio,
         contact:req.body.contact,
         linkedin:req.body.linkedin,
-        image:req.file.filename,
+        exe_image:req.body.exe_image,
     })
     await Executive.insertMany([executive])
     res.redirect('/adminviews')
+})
+route.post("/addproject", async (req,res) => {
+    const project = new Project(req.body);
+    project.save()
+    .then(() => {
+        res.redirect('/adminviews')
+    })
+    .catch((err) => {
+        console.log(err)
+    })
 })
 // to delete an image
 route.get('/deleteexecutive/:id', async (req,res) => {
@@ -186,19 +184,6 @@ route.get('/deleteexecutive/:id', async (req,res) => {
     .catch(err=>{
         console.log(err)
     })
-})
-
-//to insert a project
-route.post("/addproject", upload.single('image'), async (req,res) => {
- 
-                const project = new Project({
-                    projectname:req.body.projectname,
-                    dateofcompletion:req.body.dateofcompletion,
-                    description:req.body.description,
-                    image:req.file.filename,
-                });
-                await Project.insertMany([project])
-                res.redirect('/adminviews')
 })
 
 // to delete an project
