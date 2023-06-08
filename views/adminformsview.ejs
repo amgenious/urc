@@ -57,3 +57,28 @@
           <% } %>
     </tbody>
 </table>
+<br>
+<br>
+<p style="text-align: center;"><i>Display of those who want to contact us</i></p>
+<table class="table table-primary table-striped-columns">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>Comments</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% if (Contact.length > 0){ %> <% Contact.forEach(Contact => { %>
+        <tr>
+            <td><%= Contact.name %></td>
+            <td><%= Contact.email %></td>
+            <td><%= Contact.phone %></td>
+            <td><%= Contact.comments %></td>
+        </tr>
+        <% }) %> <% } else{ %>
+            <p>No Contact infomations</p>
+          <% } %>
+    </tbody>
+</table>

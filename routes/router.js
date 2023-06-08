@@ -1,5 +1,6 @@
 const express = require("express")
 const Executive = require("../models/executives")
+const Contact = require("../models/contact")
 const Project = require("../models/project")
 const Idea = require("../models/ideas")
 const Join = require("../models/join")
@@ -138,7 +139,10 @@ route.get("/formviews", (req,res) => {
     .then(data => {
         Join.find()
         .then(data1 => {
-            res.render('adminformsview', {title:'URC ADMIN-FORM VIEWS', Idea:data, Join:data1})
+            Contact.find()
+            .then(data2 => {
+                res.render('adminformsview', {title:'URC ADMIN-FORM VIEWS', Idea:data, Join:data1, Contact:data2})    
+            })
         })    
     })
 })
@@ -169,6 +173,11 @@ route.post("/addproject", async (req,res) => {
     .catch((err) => {
         console.log(err)
     })
+})
+//to get contact information
+route.post("/addcontact", async(req,res) => {
+    const contact = new Contact(req.body)
+    contact.save()
 })
 // to delete an image
 route.get('/deleteexecutive/:id', async (req,res) => {
